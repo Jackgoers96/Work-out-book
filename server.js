@@ -1,6 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
+require('dotenv').config()
 
 const PORT = process.env.PORT || 3001;
 
@@ -18,7 +19,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutBookdb",
   useNewUrlParser: true,
   useCreateIndex: true,
   useFindAndModify: false,
-  useUnifiedTopology: true,});
+  useUnifiedTopology: true,
+});
 
 app.use(routes);
 
